@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profil Desa Nanas</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #2d6a4f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            font-size: 1.5rem;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin-left: 1rem;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: #40916c;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #1b4332;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar ul {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #2d6a4f;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .navbar ul li {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Profil Desa Section */
+        .profile-section {
+            padding: 2rem;
+            text-align: center;
+            background-color: #e9ecef;
+        }
+
+        .profile-section h2 {
+            color: #2d6a4f;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-section p {
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .profile-card-content {
+            padding: 1rem;
+        }
+
+        .profile-card-content h3 {
+            color: #2d6a4f;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card-content p {
+            color: #333;
+        }
+
+        /* Village Details */
+        .village-details {
+            padding: 2rem;
+            background-color: #fff;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .village-details h2 {
+            color: #2d6a4f;
+            margin-bottom: 1rem;
+        }
+
+        .village-details p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #2d6a4f;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>Desa Nanas</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="menu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profile.html">Profil Kepdes</a></li>
+            <li><a href="profildesa.html">Profil Desa</a></li>
+            <li><a href="about.html">Tentang</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Profil Desa Section -->
+    <section class="profile-section">
+        <h2>Profil Desa Nanas</h2>
+        <p>Desa Nanas terletak di Kecamatan Ibu Selatan, Kabupaten Halmahera Barat, Provinsi Maluku Utara. Desa ini memiliki lingkungan yang asri dan masyarakat yang ramah. Dengan visi membangun desa yang bersih dan teratur, serta memberikan pendidikan yang berkualitas bagi masyarakat, Pemerintah Desa Nanas berkomitmen untuk terus meningkatkan kesejahteraan warga.</p>
+
+        <div class="profile-container">
+            <!-- Profile Card 1 -->
+            <div class="profile-card">
+                <img src="./pofil.jpeg" alt="Kepala Desa">
+                <div class="profile-card-content">
+                    <h3>Kepala Desa: Djusdiony Flory</h3>
+                    <p>Memimpin desa dengan integritas dan dedikasi untuk membangun masa depan yang lebih baik bagi warga Desa Nanas.</p>
+                </div>
+            </div>
+
+            <!-- Profile Card 2 -->
+            <div class="profile-card">
+                <img src="./image/lekmon (2).jpeg" alt="Sekretaris Desa">
+                <div class="profile-card-content">
+                    <h3>Sekretaris: Anggreini Sawat</h3>
+                    <p>Mengelola administrasi desa dan memastikan pelayanan kepada masyarakat berjalan lancar.</p>
+                </div>
+            </div>
+
+            <!-- Profile Card 3 -->
+            <div class="profile-card">
+                <img src="path-to-image-3.jpg" alt="Kaur Umum">
+                <div class="profile-card-content">
+                    <h3>Kaur Umum: Yotam Siho</h3>
+                    <p>Bertanggung jawab atas kegiatan administratif umum dan pelayanan publik di Desa Nanas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Village Details Section -->
+    <section class="village-details">
+        <h2>Sejarah Singkat Desa Nanas</h2>
+        <p>Desa Nanas didirikan pada tahun 1975 dan merupakan bagian dari Kecamatan Ibu Selatan di Kabupaten Halmahera Barat. Desa ini memiliki potensi alam yang melimpah, termasuk perkebunan dan pertanian yang menjadi sumber utama penghasilan warga. Seiring berjalannya waktu, Desa Nanas terus berkembang dan berusaha meningkatkan infrastruktur serta fasilitas umum untuk kesejahteraan masyarakat.</p>
+
+        <h2>Visi dan Misi</h2>
+        <p><strong>Visi:</strong> Membangun desa yang bersih, tertata rapi, dan sejahtera dengan masyarakat yang terdidik dan berdaya saing.</p>
+        <p><strong>Misi:</strong></p>
+        <ul>
+            <li>Meningkatkan kualitas pendidikan di desa.</li>
+            <li>Mengembangkan infrastruktur desa untuk menunjang aktivitas ekonomi dan sosial.</li>
+            <li>Memperkuat nilai-nilai kebersamaan dan gotong-royong antar warga.</li>
+            <li>Melindungi dan melestarikan lingkungan desa.</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Pemerintah Desa Nanas | Jalan Trans Halmahera, Maluku Utara</p>
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

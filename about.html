@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Desa Nanas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+.bg-img{
+    background-image: url(./bg-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #04AA6D;
+    z-index: -1px;
+    height: 400px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  margin-top: 20px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #009879;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #04AA6D;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Visi Misi Section */
+        .visi-misi {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .visi-misi h2 {
+            font-size: 2rem;
+            color: #04AA6D;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .visi-misi h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .visi-misi ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Pemerintahan Section */
+        .pemerintahan {
+            margin: 30px 0;
+        }
+
+        .pemerintahan h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #04AA6D;
+        }
+
+        .pemerintahan .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .team-member {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .team-member {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .about h2, .visi-misi h2, .pemerintahan h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Judul">
+        </div>
+        <div class="bg-img">
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="new.html">News</a>
+            <a href="kontak.html">Contact</a>
+            <div class="dropdown">
+              <button class="dropbtn">Berita 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div> 
+            <div class="dropdown">
+                <button class="dropbtn">Kegiatan Desa
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="kegiatan.html">Data Bidang Dan Kegiatan Desa</a>
+                  <a href="fotoslide.html">Foto Pembagian Mesin</a>
+                  <a href="musawara.html">Foto Musawara Dusun/RT</a>
+                </div>
+              </div>
+              
+            <a href="about.html">About</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+          </div>
+        </div>
+    
+    
+    
+          <script>
+            function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+          </script>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Desa Nanas</h1>
+        <p>Kecamatan Ibu Selatan, Kabupaten Halmahera Barat, Provinsi Maluku Utara</p>
+    </header>
+
+    <!-- About Desa Section -->
+    <div class="container">
+        <section class="about">
+            <h2>Tentang Desa Nanas</h2>
+            <p>
+                Desa Nanas terletak di Kecamatan Ibu Selatan, Kabupaten Halmahera Barat, Provinsi Maluku Utara. Desa ini
+                dikenal dengan komunitas yang kuat dan semangat gotong royong dalam menjalankan berbagai kegiatan sosial
+                dan pembangunan. Kami berkomitmen untuk menciptakan lingkungan yang bersih, tertata rapi, dan meningkatkan
+                kualitas hidup masyarakat dengan memberikan akses pendidikan dan kesehatan yang berkualitas.
+            </p>
+            <p>
+                Dengan visi membangun desa yang sejahtera dan berkelanjutan, Desa Nanas terus berupaya dalam pembangunan
+                infrastruktur yang mendukung pertumbuhan ekonomi serta peningkatan kesejahteraan sosial masyarakat.
+            </p>
+        </section>
+
+        <!-- Visi Misi Section -->
+        <section class="visi-misi">
+            <h2>Visi dan Misi Desa Nanas</h2>
+            <h3>Visi:</h3>
+            <p>
+                Mewujudkan Desa Nanas yang bersih, teratur, dan berdaya saing dengan masyarakat yang cerdas, sehat, dan
+                sejahtera.
+            </p>
+
+            <h3>Misi:</h3>
+            <ul>
+                <li>Meningkatkan kualitas pendidikan bagi seluruh masyarakat.</li>
+                <li>Mendorong pembangunan infrastruktur desa yang berkelanjutan.</li>
+                <li>Meningkatkan akses layanan kesehatan yang merata dan berkualitas.</li>
+                <li>Mengembangkan potensi ekonomi lokal untuk kesejahteraan masyarakat.</li>
+                <li>Mewujudkan lingkungan yang bersih dan tertata dengan baik.</li>
+            </ul>
+        </section>
+
+        <!-- Struktur Pemerintahan Section -->
+        <section class="pemerintahan">
+            <h2>Struktur Pemerintahan Desa Nanas</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="pofil.jpeg" alt="Kepala Desa">
+                    <h3>Djusdiony Flory</h3>
+                    <p>Kepala Desa</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/lekmon (2).jpeg" alt="Sekretaris Desa">
+                    <h3>Anggreini Sawat</h3>
+                    <p>Sekretaris Desa</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kaur Umum">
+                    <h3>Yotam Siho</h3>
+                    <p>Kaur Umum</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kaur Keuangan">
+                    <h3>Fenni Mare</h3>
+                    <p>Kaur Keuangan</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kaur Perencanaan">
+                    <h3>Marson Tobelo</h3>
+                    <p>Kaur Perencanaan</p>
+                </div>
+                <div class="team-member">
+                    <img src="./image/lekmon (1).jpeg" alt="Kasi Pemerintahan">
+                    <h3>Lekmon Flory</h3>
+                    <p>Kasi Pemerintahan</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kasi Pemerintahan">
+                    <h3>Ferdinan Dara</h3>
+                    <p>Ketua RT 001</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kasi Pemerintahan">
+                    <h3>Christofel Flory</h3>
+                    <p>Ketua RT 002</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kasi Pemerintahan">
+                    <h3>Elwiel Guraici</h3>
+                    <p>Ketua RT 003</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Kasi Pemerintahan">
+                    <h3>Simon Lage</h3>
+                    <p>Ketua RT 004</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <style>
+        /* Footer Styles */
+        .footer {
+            background-color: #009879;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .footer .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+    
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px 0;
+        }
+    
+        .footer .h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    
+        .footer .p, .footer ul, .footer .li {
+            color: #ddd;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        .footer ul .li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    
+        .footer ul .li a:hover {
+            color: #fff;
+        }
+    
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+    
+        .footer .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #ddd;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+    
+        .footer .social-icons a:hover {
+            color: #fff;
+        }
+    
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    
+        .footer-bottom .p {
+            color: #ddd;
+            font-size: 14px;
+        }
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer .row {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .footer-col {
+                text-align: center;
+            }
+        }
+    </style>
+    </head>
+    <body>
+    
+    <!-- Responsive Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="footer-col">
+                    <h4 class="h4">Tentang Desa Nanas</h4>
+                    <p class="p">Desa Nanas adalah desa yang terletak di Kecamatan Ibu Selatan, Kabupaten Halmahera Barat, dengan visi membangun desa yang bersih dan teratur untuk masyarakat.</p>
+                </div>
+    
+                <!-- Useful Links -->
+                <div class="footer-col">
+                    <h4 class="h4">Tautan Berguna</h4>
+                    <ul>
+                        <li class="li"><a href="index.html">Beranda</a></li>
+                        <li class="li"><a href="profile.html">Profil Desa</a></li>
+                        <li class="li"><a href="kegiatan.html">Kegiatan</a></li>
+                        <li class="li"><a href="kontak.html">Kontak Kami</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media -->
+                <div class="footer-col">
+                    <h4 class="h4">Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Desa Nanas. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+
+</body>
+
+</html>
